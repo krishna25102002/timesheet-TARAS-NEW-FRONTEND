@@ -1,0 +1,180 @@
+.attendance-container {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #333;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.attendance-header {
+  background: linear-gradient(135deg, #003366 0%, #004d99 100%);
+  color: white;
+  padding: 15px 25px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.attendance-logo {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.attendance-user-info {
+  font-size: 18px;
+}
+
+.attendance-instructions {
+  background-color: #f2f2f2;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+.attendance-instructions h2 {
+  margin-top: 0;
+}
+
+.attendance-main {
+  padding: 20px;
+}
+
+.attendance-form {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 15px 25px;
+  padding: 20px;
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  margin: 20px 0;
+}
+
+.attendance-section {
+  margin-bottom: 10px;
+  max-width: 300px;
+}
+
+.attendance-section label {
+  display: block;
+  margin-bottom: 4px;
+  font-weight: 500;
+  font-size: 0.9rem;
+}
+
+.attendance-section input,
+.attendance-section select {
+  width: 100%;
+  padding: 6px 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 13px;
+  height: 32px;
+}
+
+.attendance-section input[type="date"] {
+  width: 140px;
+}
+
+.attendance-section input[type="number"] {
+  width: 100px;
+}
+
+/* Style for holidays in date picker */
+.holiday {
+  background-color: #e6ffe6 !important;
+  border: 1px solid #99ff99 !important;
+}
+
+/* Holiday style enhancement */
+.holiday-date {
+  background-color: #e6ffe6;
+  border-color: #99ff99;
+  position: relative;
+}
+
+.holiday-date::after {
+  content: '🏢';
+  position: absolute;
+  right: 5px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.attendance-proceed-button {
+  background-color: #ff6600;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.attendance-table-container {
+  padding: 20px;
+}
+
+.attendance-table {
+  width: 100%;
+  border: 2px solid #003366;
+  margin: 20px 0;
+}
+
+.attendance-table th {
+  background-color: #003366;
+  color: white;
+  padding: 12px;
+  text-align: left;
+}
+
+.attendance-table td {
+  padding: 10px;
+  border: 1px solid #003366;
+}
+
+.attendance-table tbody tr:nth-child(even) {
+  background-color: #f8f9fa;
+}
+
+.button-group {
+  display: flex;
+  gap: 10px;
+  justify-content: flex-end;
+  margin-top: 20px;
+}
+
+.btn {
+  padding: 10px 20px;
+  border-radius: 4px;
+  font-weight: 500;
+  cursor: pointer;
+  border: none;
+  transition: all 0.3s ease;
+}
+
+.btn-submit {
+  background-color: #28a745;
+  color: white;
+}
+
+.btn-save {
+  background-color: #007bff;
+  color: white;
+}
+
+.btn-cancel {
+  background-color: #dc3545;
+  color: white;
+}
+
+.btn:hover {
+  opacity: 0.9;
+  transform: translateY(-1px);
+}
+
+.readonly-input {
+  background-color: #f5f5f5;
+  cursor: not-allowed;
+  border: 1px solid #ddd;
+  padding: 8px 12px;
+  border-radius: 4px;
+  width: 100%;
+}
