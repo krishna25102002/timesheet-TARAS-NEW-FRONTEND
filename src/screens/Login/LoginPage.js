@@ -2,25 +2,26 @@ import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { LoginStyles } from "./LoginStyles";
 import images from "../../assets/images";
+import { login } from "../../services/authService";
 
 const LoginScreen = () => {
-  const [username, setUsername] = useState("");
+  const [employeeId, setEmployeeId] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
   const navigate = useNavigate();
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    if (!username || !password) {
+    if (!employeeId || !password) {
       setError("Please fill in all fields");
       return;
     }
-    // Add your authentication logic here
-    if (username === "admin" && password === "admin") {
-      // Replace with actual authentication
-      localStorage.setItem("isAuthenticated", "true");
-      navigate("/");
-    } else {
+    try {
+      const user = await login(employeeId, password);
+      if (user) {
+        navigate("/");
+      }
+    } catch (error) {
       setError("Invalid credentials");
     }
   };
@@ -67,12 +68,12 @@ const LoginScreen = () => {
             <label style={LoginStyles.label}>Employee ID</label>
             <input
               style={LoginStyles.input}
-              value={username}
+              value={employeeId}
               onChange={(e) => {
-                setUsername(e.target.value);
+                setEmployeeId(e.target.value);
                 setError("");
               }}
-              placeholder="Enter your username"
+              placeholder="Enter your employee ID"
               type="text"
             />
           </div>

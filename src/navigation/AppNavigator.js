@@ -21,6 +21,14 @@ function AppNavigator() {
           path="/"
           element={
             <ProtectedRoute>
+              <LoginScreen />
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="/EntryPage"
+          element={
+            <ProtectedRoute>
               <EntryPage />
             </ProtectedRoute>
           }

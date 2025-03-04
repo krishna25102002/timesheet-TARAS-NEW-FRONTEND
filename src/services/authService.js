@@ -1,16 +1,24 @@
 import axios from "axios";
 
-const API_URL = "your_api_url_here";
+const API_URL = "http://localhost:6000";
 
-export const login = async (username, password) => {
-  const response = await axios.post(`${API_URL}/auth/login`, {
-    username,
-    password,
-  });
-  if (response.data.token) {
-    localStorage.setItem("user", JSON.stringify(response.data));
+export const login = async (employeeId, password) => {
+  try {
+    const response = await axios.post(`${API_URL}/auth/login`, {
+      employeeId,
+      password,
+    });
+    if (response.data.token) {
+      localStorage.setItem("user", JSON.stringify(response.data));
+    }
+    return response.data;
+  } catch (error) {
+    console.error(
+      "Login error:",
+      error.response ? error.response.data : error.message
+    );
+    throw new Error("Invalid credentials");
   }
-  return response.data;
 };
 
 export const logout = () => {
